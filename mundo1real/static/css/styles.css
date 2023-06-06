@@ -138,6 +138,7 @@ li {
   height: 40px;
   background-color: #ffffff;
   margin: 5px;
+  margin-top: 30px;
  
 }
 
@@ -207,7 +208,7 @@ input[type=checkbox] {
 #carouselDarkVariant {
   width: 100% !important;
   display: flex;
-  height: 400px!important;
+  height: 100%!important;
 }
 .carousel-inner {
   width: 100%!important;
@@ -221,7 +222,7 @@ input[type=checkbox] {
 .carousel-item img {
   object-fit: cover!important;
   width: 100%!important;
-  height: 100%!important;
+  height: 500px!important;
 }
 
 
@@ -275,6 +276,7 @@ input[type=checkbox] {
 }
 
 .paymetodos{
+  margin-top: 30px;
   padding-top: 10px;
   padding-bottom: 40px;
   display: flex;
@@ -465,6 +467,7 @@ h2 {
 
 .container {
   text-align: center;
+  margin-top: 30px;
 }
 
 .grid {
