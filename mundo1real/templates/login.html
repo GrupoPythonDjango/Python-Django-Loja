@@ -36,12 +36,23 @@ html,
     .card {
     width: 900px;
   }
+  .nav-link{
+    color: #c00424!important;
+    background-color: #ffffff!important;
+
+  }
+  .nav-link:hover{
+    color: #ffffff!important;
+    background-color: #c00424!important;
+
+  }
+
 
 </style>
 
 <body>
 
-<section class="1">
+
   <div class="container text-center">
     <!-- Pills navs -->
     <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
@@ -54,7 +65,7 @@ html,
           role="tab"
           aria-controls="pills-login"
           aria-selected="true" 
-          style="color: #ef233c"
+          
           >Login</a
         >
       </li>
@@ -67,7 +78,7 @@ html,
           role="tab"
           aria-controls="pills-register"
           aria-selected="false"
-          style="color: #ef233c"
+          style="color: #ffffff; background-color: #c00424;"
           >Registro</a
         >
       </li>
@@ -206,9 +217,7 @@ html,
   <script src="{% static 'js/mdb.min.js' %}"></script>
 
   </div>
-</section>
 
-<section class="2">
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-white text-muted">
   <!-- Section: Social media -->
