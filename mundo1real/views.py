@@ -4,11 +4,52 @@ from .models import Usuario
 from django.contrib.auth import authenticate, login
 
 
+# def da home e login
+
+
 def home(request):
     return render(request, 'home.html')
 
 def login_views(request):
     return render(request, 'login.html')
+
+
+#fim da def home e login
+
+
+
+
+
+# def de departamentos
+
+
+def cozinha_page(request):
+    return render(request, 'departamentos/depart_cozinha.html')
+
+def brinquedos_page(request):
+    return render(request, 'departamentos/depart_brinquedos.html')
+
+def carpintaria_page(request):
+    return render(request, 'departamentos/depart_carpintaria.html')
+
+def decoracao_page(request):
+    return render(request, 'departamentos/depart_decoracao.html')
+
+def eletronicos_page(request):
+    return render(request, 'departamentos/depart_eletronicos.html')
+
+def escritorio_page(request):
+    return render(request, 'departamentos/depart_escritorio.html')
+
+def esportivos_page(request):
+    return render(request, 'departamentos/depart_esportivos.html')
+
+# fim def de  departamentos
+
+
+
+
+# logica do crud
 
 def cadastrar_usuario(request):
     if request.method == 'POST':
@@ -42,3 +83,12 @@ def fazer_login(request):
             return render(request, 'login.html', {'erro': 'Credenciais inválidas'})
     else:
         return render(request, 'home')
+
+
+
+
+
+
+
+
+# fim da logica do crud

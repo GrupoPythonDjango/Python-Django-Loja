@@ -1,0 +1,205 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'css\styles.css'  %}">
+  <link rel="stylesheet" href="{% static 'css\mdb.min.css' %}">
+  <title>Escritório</title>
+
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-store"></i>
+      </div>
+
+      <input type="checkbox" id="checkbox_toggle" />
+      <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+      <ul class="nav-links">
+        <div class="menu">
+          <li><a href="/">Início</a></li>
+          <li><a href="/">Sobre</a></li>
+          <li class="services">
+            <a href="/">Departamentos</a>
+          </li>
+          <li><a href="/">Promoções</a></li>
+          <li><a href="/">Novidades</a></li>
+
+          <button type="button" class="btncadastro1" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+            LOGIN/CADASTRO
+          </button>
+
+
+            
+        </div>
+      </ul>
+          </div>
+          </div>
+    </nav>
+
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Metodos de Pagamento -->
+
+    <div class="container">
+      <h2>Cozinha</h2>
+
+      <div class="grid stretch">
+        <div class="item">
+          <h3 class="card-title">Cozinha</h3>
+            <div class="card-content">
+              <img type="button" src="{% static 'img/faqueiro.png' %}" alt="card-image">
+            </div>
+        </div>
+        <div class="item">
+          <h3 class="card-title">Cozinha</h3>
+          <div class="card-content">
+            <img  src="{% static 'img/faqueiro.png' %}" alt="card-image">
+          </div>
+        </div>
+        <div class="item">
+          <h3 class="card-title">Cozinha</h3>
+          <div class="card-content">
+            <img src="{% static 'img/faqueiro.png' %}" alt="card-image">
+          </div>
+        </div>
+        <div class="item">
+          <h3 class="card-title">Cozinha</h3>
+          <div class="card-content">
+            <img src="{% static 'img/faqueiro.png' %}" alt="card-image">
+          </div>
+        </div>
+        <div class="item">
+          <h3 class="card-title">Cozinha</h3>
+          <div class="card-content">
+            <img src="{% static 'img/faqueiro.png' %}" alt="card-image">
+          </div>
+        </div>
+        <div class="item">
+          <h3 class="card-title">Cozinha</h3>
+          <div class="card-content">
+            <img src="{% static 'img/faqueiro.png' %}" alt="card-image">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/mdb.min.js' %}"></script>
+
+
+
+
+  
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-white text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+
+  <!-- Section: Links  -->
+ 
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3 text-secondary"></i>Trabalho em equipe.
+          </h6>
+          <p>
+            Trabalho realizado por um dos grupos da turma de ADS, alunos: Lucas Vieira .  Macksuel Oliveira, Marta Alves e Mônica Cristina!
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Tecnologias
+          </h6>
+          <a href="#!" class="text-reset">DJANGO</a>
+          </p>
+          <a href="#!" class="text-reset">PYTHON</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">HTML</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">CSS</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">JS</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Outras
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">GIT</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">GITHUB</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">NOTION</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">MDB</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Professor</h6>
+          <p><i class="fa-solid fa-chalkboard-user"></i> Glorisnaldo Santos</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+    © 2023 Copyright:
+    <a class="text-reset fw-bold" href="www.adsparauapebas.com">Turma ADS - Grupo Starlink</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+</body>
+
+</html>
