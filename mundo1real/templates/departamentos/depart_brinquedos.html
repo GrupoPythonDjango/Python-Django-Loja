@@ -16,37 +16,36 @@
 
 <body>
 
-    <nav class="navbar">
-      <div class="logo">
-        <i class="fa-solid fa-store"></i>
-      </div>
+  <nav class="navbar">
+    <img src="{% static 'img/logo_store.png' %}" style="max-width: 90px; height: inherit; margin-left: 30px;">
+    
 
-      <input type="checkbox" id="checkbox_toggle" />
-      <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+    <input type="checkbox" id="checkbox_toggle" />
+    <label for="checkbox_toggle" class="hamburger">&#9776;</label>
 
-      <ul class="nav-links">
-        <div class="menu">
-          <li><a href="{% url 'home' %}">Início</a></li>
-          <li><a href="/">Sobre</a></li>
+    <ul class="nav-links">
+
+      <div class="menu">
+
+        <li>
+          <a href="/">Início</a></li>
+        <li>
+          <a href="#novidades">Novidades</a></li>
           <li class="services">
-            <a href="/">Departamentos</a>
-          </li>
-          <li><a href="/">Promoções</a></li>
-          <li><a href="/">Novidades</a></li>
-
-          <button type="button" class="btncadastro1" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-            LOGIN/CADASTRO
-          </button>
+            <a href="#departamentos">Departamentos</a></li>
+        <li>
+          <a href="/">Novidades</a></li>
+        <li>
+          <a href="#sobre">Sobre</a></li>
 
 
-            
-        </div>
-      </ul>
-          </div>
-          </div>
-    </nav>
+"
+        <a href="{% url 'login' %}" button type="submit" class="btncadastro1">
+          LOGIN / CADASTRO
+        </a>
 
-    </div>
+    </ul>
+  </nav>
 
 
 
