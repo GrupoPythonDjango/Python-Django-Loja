@@ -8,8 +8,6 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
-
 body {
   font-family: cursive;
   background-size: cover;
@@ -17,12 +15,11 @@ body {
 html {
   font-family: sans-serif;
   scroll-snap-type: mandatory;
- 
+
   scroll-snap-type: y mandatory;
 }
 .section1 {
   border-bottom: 1px solid white;
- 
   height: auto;
   scroll-snap-align: start;
   text-align: center;
@@ -90,14 +87,14 @@ li {
 
 .menu li {
   padding: 5px 14px;
-  color: #c00424!important;
+  color: #ffffff!important;
 }
 
 
 .menu li:hover {
-  background-color: #ef233c!important;
-  transition: 0.3s ease!important;
-  color: #ffffff!important;
+  background-color: #ef233c;
+  transition: 0.3s ease;
+  color: #ffffff;
 }
 
 
@@ -138,7 +135,6 @@ li {
   height: 40px;
   background-color: #ffffff;
   margin: 5px;
-  margin-top: 30px;
  
 }
 
@@ -208,7 +204,7 @@ input[type=checkbox] {
 #carouselDarkVariant {
   width: 100% !important;
   display: flex;
-  height: 100%!important;
+  height: 400px!important;
 }
 .carousel-inner {
   width: 100%!important;
@@ -222,7 +218,7 @@ input[type=checkbox] {
 .carousel-item img {
   object-fit: cover!important;
   width: 100%!important;
-  height: 500px!important;
+  height: 100%!important;
 }
 
 
@@ -242,7 +238,16 @@ input[type=checkbox] {
 /*CARD Informativo*/
 
 
+.text-center{
+  padding-top: 20px!important;
+  padding-left: 10px!important;
+  text-align: initial!important;
+  margin-top: 20px!important;
+  margin-bottom: 40px!important;
+  background-color: #ef233c!important;
+  color: #ffffff!important;
 
+}
 .text-cente i{
 
   color: #ffffff!important;
@@ -267,7 +272,6 @@ input[type=checkbox] {
 }
 
 .paymetodos{
-  margin-top: 30px;
   padding-top: 10px;
   padding-bottom: 40px;
   display: flex;
@@ -458,7 +462,6 @@ h2 {
 
 .container {
   text-align: center;
-  margin-top: 30px;
 }
 
 .grid {
@@ -594,6 +597,12 @@ h2 {
   .menu {
     flex-direction: column;
     color: #ffffff!important;
+  }
+ nu li {
+    padding: 5px 0;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
   }
 
 

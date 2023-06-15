@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Confirmação de pagamento</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="#" class="logo">Lojão Store</a>
+        <nav>
+          <ul>
+            <li><a href="#">Produtos</a></li>
+            <li><a href="#">Sobre nós</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <h1>Confirmação de pagamento</h1>
+        <div class="product-details">
+          <div class="product-image">
+            <img src="https://via.placeholder.com/300x300" alt="Imagem do produto">
+          </div>
+          <div class="product-info">
+            <h2>Camiseta masculina</h2>
+            <p>Cor: preto</p>
+            <p>Tamanho: M</p>
+            <p>Preço: R$ 49,90</p>
+          </div>
+        </div>
+        <div class="payment-details">
+          <h2>Detalhes do pagamento</h2>
+          <form>
+            <div class="form-group">
+              <label for="payment-method">Forma de pagamento:</label>
+              <select id="payment-method" name="payment-method">
+                <option value="credit-card">Cartão de crédito</option>
+                <option value="boleto">Boleto bancário</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="installments">Parcelamento:</label>
+              <select id="installments" name="installments">
+                <option value="1">À vista</option>
+                <option value="2">2x sem juros</option>
+                <option value="3">3x sem juros</option>
+                <option value="4">4x sem juros</option>
+                <option value="5">5x sem juros</option>
+                <option value="6">6x sem juros</option>
+              </select>
+            </div>
+            <button type="submit">Confirmar pagamento</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <p>&copy; 2023 Minha Loja. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+  </body>
+</html>

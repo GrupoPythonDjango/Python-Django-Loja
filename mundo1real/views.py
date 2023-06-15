@@ -4,27 +4,22 @@ from .models import Usuario
 from django.contrib.auth import authenticate, login
 
 
-# def da home e login
-
-
 def home(request):
     return render(request, 'home.html')
+
 
 def login_views(request):
     return render(request, 'login.html')
 
+def cadastro_views(request):
+    return render (request, 'cadastro.html')
 
 #fim da def home e login
 
-
-
-
-
 # def de departamentos
 
-
 def cozinha_page(request):
-    return render(request, 'departamentos/depart_cozinha.html')
+    return render(request, './departamentos/depart_cozinha.html')
 
 def brinquedos_page(request):
     return render(request, 'departamentos/depart_brinquedos.html')
@@ -47,10 +42,6 @@ def esportivos_page(request):
 # fim def de  departamentos
 
 
-
-
-# logica do crud
-
 def cadastrar_usuario(request):
     if request.method == 'POST':
         email = request.POST['email']
@@ -64,7 +55,7 @@ def cadastrar_usuario(request):
             usuario = Usuario(email=email, nome=nome, senha=senha_hash)
             usuario.save()
 
-            return redirect('')
+            return redirect('home')
         else:
             return render(request, 'erro.html')
     else:
@@ -77,18 +68,10 @@ def fazer_login(request):
         user = authenticate(request, email=email, password=senha)
         if user is not None:
             login(request, user)
-            return redirect('home')  # Redirecionar para a página inicial após o login
+            print('Login bem-sucedido')  # Adicione esse print para verificar se o login está sendo feito corretamente
+            return redirect('home.html')
         else:
-            # Exibir uma mensagem de erro para o usuário
-            return render(request, 'login.html', {'erro': 'Credenciais inválidas'})
+            print('deu merda')  # Adicione esse print para verificar se as credenciais estão sendo validadas corretamente
+            return render(request, 'erro.html', {'erro': 'Credenciais inválidas'})
     else:
-        return render(request, 'home')
-
-
-
-
-
-
-
-
-# fim da logica do crud
+        return render(request, 'home.html')

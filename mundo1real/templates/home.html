@@ -8,8 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
   <link rel="stylesheet" href="{% static 'css\styles.css'  %}">
-  <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css\mdb.min.css' %}">
   <title>LOJÂO</title>
+  <link rel="icon" type="image/png" href="{% static 'img/icon_store.png' %}" style="width: 900px!important;"/>
 
 
 </head>
@@ -18,25 +19,31 @@
 <body>
 
     <nav class="navbar">
-      <div class="logo">
-        <i class="fa-solid fa-store"></i>
-      </div>
+      <img src="{% static 'img/logo_store.png' %}" style="max-width: 90px; height: inherit; margin-left: 30px;">
+      
 
       <input type="checkbox" id="checkbox_toggle" />
       <label for="checkbox_toggle" class="hamburger">&#9776;</label>
 
       <ul class="nav-links">
-        <div class="menu">
-          <li><a href="/">Início</a></li>
-          <li><a href="/">Sobre</a></li>
-          <li class="services">
-            <a href="#departamentos">Departamentos</a>
-          </li>
-          <li><a href="/">Promoções</a></li>
-          <li><a href="/">Novidades</a></li>
 
-          <a href="./login.html" button type="submit" class="btncadastro1">
-            LOGIN/CADASTRO
+        <div class="menu">
+
+          <li>
+            <a href="/">Início</a></li>
+          <li>
+            <a href="#novidades">Novidades</a></li>
+            <li class="services">
+              <a href="#departamentos">Departamentos</a></li>
+          <li>
+            <a href="/">Novidades</a></li>
+          <li>
+            <a href="#sobre">Sobre</a></li>
+
+
+"
+          <a href="{% url 'login' %}" button type="submit" class="btncadastro1">
+            LOGIN / CADASTRO
           </a>
 
       </ul>
@@ -45,6 +52,10 @@
     </div>
     </ul>
     </nav>
+
+
+    <!-- SUB HEADER-->
+
     <div class="links">
       <a href="#departamentos">Departamentos</a>
       <a href="#element-2">Endereço</a>
@@ -53,6 +64,11 @@
       <a href="#element-5">Escritório</a>
 
     </div>
+
+
+
+
+    <!--Carroussel-->
 
     <div class="caroussel">
       <!-- Carousel wrapper -->
@@ -159,10 +175,6 @@
 
 
 
-  <!-- Cards de promoção-->
-
-
-
     <!-- Metodos de Pagamento -->
 
     <div class="container">
@@ -201,7 +213,7 @@
             </div>
           </div>
           <div class="card-link-wrapper">
-            <a href="" class="card-link">Acessar</a>
+            <a href="{% url 'cozinha' %}" class="card-link">Acessar</a>
           </div>
         </li>
         <li class="card">
@@ -212,7 +224,7 @@
             </div>
           </div>
           <div class="card-link-wrapper">
-            <a href="" class="card-link">Acessar</a>
+            <a href="{% url 'brinquedos' %}" class="card-link">Acessar</a>
           </div>
         </li>
         <li class="card">
@@ -223,7 +235,7 @@
             </div>
           </div>
           <div class="card-link-wrapper">
-            <a href="" class="card-link">Acessar</a>
+            <a href="{% url 'decoracao' %}" class="card-link">Acessar</a>
           </div>
         </li>
         <li class="card">
@@ -234,7 +246,7 @@
             </div>
           </div>
           <div class="card-link-wrapper">
-            <a href="" class="card-link">Acessar</a>
+            <a href="{% url 'decoracao' %}" class="card-link">Acessar</a>
           </div>
         </li>
         <li class="card">
@@ -245,7 +257,7 @@
             </div>
           </div>
           <div class="card-link-wrapper">
-            <a href="" class="card-link">Acessar</a>
+            <a href="{% url 'escritorio' %}" class="card-link">Acessar</a>
           </div>
         </li>
         <li class="card">
@@ -256,7 +268,7 @@
             </div>
           </div>
           <div class="card-link-wrapper">
-            <a href="" class="card-link">Acessar</a>
+            <a href="{% url 'esportivos' %}" class="card-link">Acessar</a>
           </div>
         </li>
         <li class="card">
@@ -267,7 +279,7 @@
             </div>
           </div>
           <div class="card-link-wrapper">
-            <a href="" class="card-link">Acessar</a>
+            <a href="{% url 'carpintaria' %}" class="card-link">Acessar</a>
           </div>
         </li>
       </ul>
@@ -282,9 +294,9 @@
 
 
 
-    <!-- Metodos de Pagamento -->
+    <!-- Novidades -->
 
-    <div class="container">
+    <div class="container" id="novidades">
       <h2>Novidades</h2>
      
       <div class="grid stretch">
@@ -326,6 +338,96 @@
         </div>
       </div>
     </div>
+
+
+    <!-- Footer -->
+<footer class="text-center text-lg-start bg-white text-muted" id="sobre" >
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+
+  <!-- Section: Links  -->
+ 
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3 text-secondary"></i>Trabalho em equipe.
+          </h6>
+          <p>
+            Trabalho realizado por um dos grupos da turma de ADS, alunos: Lucas Vieira .  Macksuel Oliveira, Marta Alves e Mônica Cristina!
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Tecnologias
+          </h6>
+          <a href="#!" class="text-reset">DJANGO</a>
+          </p>
+          <a href="#!" class="text-reset">PYTHON</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">HTML</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">CSS</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">JS</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Outras
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">GIT</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">GITHUB</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">NOTION</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">MDB</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Professor</h6>
+          <p><i class="fa-solid fa-chalkboard-user"></i> Glorisnaldo Santos</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+    © 2023 Copyright:
+    <a class="text-reset fw-bold" href="www.adsparauapebas.com">Turma ADS - Grupo Starlink</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
 
 
 
