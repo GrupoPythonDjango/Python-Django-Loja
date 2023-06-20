@@ -1,4 +1,4 @@
-{% load static %}
+a{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -55,6 +55,37 @@ html,
 <!-- Login e cadastro-->
 
   <div class="container text-center">
+      <br>
+      {% if status == '0'%}
+      <div class="alert alert-success" role="alert">
+        Cadastro realizado com sucesso.
+      </div>
+      {% endif %}
+
+      {% if status == '1'%}
+      <div class="alert alert-danger" role="alert">
+        Nome e email não podem estar vazio.
+      </div>
+      {% endif %} 
+
+      {% if status == '2'%}
+      <div class="alert alert-danger" role="alert">
+        Sua deve ter pelo menos 8 caracteres.
+      </div>
+      {% endif%}
+
+      {% if status == '3'%}
+      <div class="alert alert-danger" role="alert">
+        Usuario ja existe no sistema.
+      </div>
+      {% endif%}
+
+      {% if status == '4'%}
+      <div class="alert alert-danger" role="alert">
+        Erro interno do sistema..
+      </div>
+      {% endif%}
+
     <img src="{% static 'img/logo_store.png' %}" style="max-width: 120px; height: inherit;">
 
     <!-- Pills navs -->
@@ -131,6 +162,7 @@ html,
           background: #ef233c;
           border-radius: 30px;
           border-color: #c00424;">Cadastrar</button>
+          <a href="{% url 'login' %} "class="btn btn-warning btn-lg"> Login </a>
         </form>
       </div>
     </div>

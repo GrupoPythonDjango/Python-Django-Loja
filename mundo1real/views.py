@@ -1,33 +1,79 @@
 from itertools import product
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
-from django.contrib.auth.hashers import make_password
-
 from mundo1real.form import ProductSearchForm
 from .models import Usuario
 from django.contrib.auth import authenticate, login
 
 
+
 def home(request):
+    if request.session.get('usuario'):
+        usuario = Usuario.objects.get(id = request.session[ 'usuario']).nome
     return render(request, 'home.html')
 
 
-def login_views(request):
-    return render(request, 'login.html')
+def login(request):
+    status = request.GET.get('status')
+    return render(request, 'login.html', {'status': status} )
 
-def cadastro_views(request):
-    return render (request, 'cadastro.html')
+def cadastro(request):
+    status= request.GET.get('status')
+    return render (request, 'cadastro.html', {'status': status} )
+
+
+def cadastrar_usuario(request):
+        email = request.POST.get('email')
+        nome = request.POST.get('nome')
+        senha = request.POST.get('senha')
+
+        usuario = Usuario.objects.filter(email=email)
+        if len(nome.strip()) == 0 or len(email.strip()) == 0:
+            return redirect ('/cadastro/?status=1')
+
+        if len(senha) < 8:
+            return redirect('/cadastro/?status=2')
+        if len(usuario)> 0:
+                return redirect ('/cadastro/?status=3')
+            
+        try:
+                usuario = Usuario(email=email, nome=nome, senha=senha)
+                usuario.save()
+
+                return redirect('/cadastro/?status=0')
+        except:
+            return render(request, '/cadastro/?status=4')
+    
+
+def fazer_login(request):
+        email = request.POST.get('email')
+        senha = request.POST.get('senha')
+
+        usuario = Usuario.objects.filter(email = email).filter(senha = senha)
+        
+        if len(usuario) == 0:
+            return redirect('/login/?status=1')
+        elif len(usuario) > 0:
+            request.session['usuario'] = usuario[0].id
+            return redirect('/home/')
+        return HttpResponse(f"{email} {senha}")
+
+def sair(request ):
+    request.session.flush()
+    return redirect('/login')
+
 
 #fim da def home e login
 
 # def de departamentos
 
 def cozinha_page(request):
-     if request.method == 'GET':
+    if request.method == 'GET':
         query = request.GET.get('search_query')
         return render(request, 'depart_cozinha.html', {'query': query})
-     else:
+    else:
         return render(request, './departamentos/depart_cozinha.html')
-     
+    
 def brinquedos_page(request):
     if request.method == 'GET':
         search_query = request.GET.get('search_query')
@@ -65,40 +111,6 @@ def produto_page(request):
 # fim da def de produtos
 
 
-def cadastrar_usuario(request):
-    if request.method == 'POST':
-        email = request.POST['email']
-        nome = request.POST['nome']
-        senha = request.POST['senha']
-        confirmar_senha = request.POST['confirmar_senha']
-
-        if senha == confirmar_senha:
-            senha_hash = make_password(senha)
-
-            usuario = Usuario(email=email, nome=nome, senha=senha_hash)
-            usuario.save()
-
-            return redirect('home')
-        else:
-            return render(request, 'erro.html')
-    else:
-        return render(request, 'home.html')
-    
-def fazer_login(request):
-    if request.method == 'POST':
-        email = request.POST['email']
-        senha = request.POST['senha']
-        user = authenticate(request, email=email, password=senha)
-        if user is not None:
-            login(request, user)
-            print('Login bem-sucedido')  # Adicione esse print para verificar se o login está sendo feito corretamente
-            return redirect('home.html')
-        else:
-            print('deu merda')  # Adicione esse print para verificar se as credenciais estão sendo validadas corretamente
-            return render(request, 'erro.html', {'erro': 'Credenciais inválidas'})
-    else:
-        return render(request, 'home.html')
-    
     
 def search_product(request):
     if request.method == 'GET':

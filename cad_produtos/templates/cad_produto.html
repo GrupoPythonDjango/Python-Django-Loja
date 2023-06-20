@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'css\styles.css'  %}">
+  <link rel="stylesheet" href="{% static 'css\mdb.min.css' %}">
+  <title>LOJÂO</title>
+  <link rel="icon" type="image/png" href="{% static 'img/icon_store.png' %}" style="width: 900px!important;"/>
+
+
+</head>
+
+<style>
+  /* Estilo para centralizar o formulário */
+  .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60vh; /* Altura total da janela */
+  }
+</style>
+<body>
+  <nav class="navbar">
+    <img src="{% static 'img/logo_store.png' %}" href="{% url 'home' %}" style="max-width: 90px; justify-content: center; height: inherit; margin-left: 30px;">
+    
+    
+
+    <input type="checkbox" id="checkbox_toggle" />
+    <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+    <ul class="nav-links">
+        
+        
+        
+      <div class="menu">
+"
+        <a href="{% url 'login' %}" button type="submit" class="btncadastro1">
+          VOLTAR
+        </a>
+
+    </ul>
+  </nav>
+
+  <div class="container">
+    <form>
+        <div class="input-group mb-3">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-mdb-toggle="dropdown" aria-expanded="false" style="background-color: brown!important;">
+              DEPARTAMENTO
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Brinquedos</a></li>
+              <li><a class="dropdown-item" href="#">Carpintaria</a></li>
+              <li><a class="dropdown-item" href="#">Cozinha</a></li>
+              <li><a class="dropdown-item" href="#">Decoração</a></li>
+              <li><a class="dropdown-item" href="#">Eletrônicos</a></li>
+              <li><a class="dropdown-item" href="#">Escritório</a></li>
+              <li><a class="dropdown-item" href="#">Espostivos</a></li>
+            </ul>
+            <input type="text" class="form-control" aria-label="Text input with dropdown button" />
+        </div>
+        
+        <!-- Nome input -->
+        <div class="form-outline mb-4">
+            <input type="text" id="form4Example1" class="form-control" />
+            <label class="form-label" for="form4Example1">Nome do produto</label>
+        </div>
+        
+        <!-- Valor input -->
+        <div class="form-outline mb-4">
+            <input type="number" id="form4Example2" class="form-control" />
+            <label class="form-label" for="form4Example2">Valor</label>
+        </div>
+
+         <!-- Imagem input -->
+
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="inputGroupFile01">Upload</label>
+          <input type="file" class="form-control" id="inputGroupFile01" />
+        </div>
+
+        <!-- Message input -->
+        <div class="form-outline mb-4">
+            <textarea class="form-control" id="form4Example3" rows="4"></textarea>
+            <label class="form-label" for="form4Example3">Detalhes</label>
+        </div>
+        
+
+        
+        <!-- Submit button -->
+        <button type="submit"
+        class="btn btn-primary btn-block mb-4"
+        style="background-color: brown!important;"
+        >Enviar</button>
+    </form>
+</div>
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/mdb.min.js' %}"></script>
+</body>
+
+</html>

@@ -46,14 +46,13 @@
             <a href="/">Novidades</a></li>
           <li>
             <a href="#sobre">Sobre</a></li>
-            
-
-
-"
-          <a href="{% url 'login' %}" button type="submit" class="btncadastro1">
-            LOGIN / CADASTRO
-          </a>
-
+          
+          {% if Usuario.is_authenticated %}
+          <a href="{% url 'sair' %}" class="btnlogout">Logout</a>
+          {% else %}
+          <a href="{% url 'login' %}" class="btncadastro1">LOGIN / CADASTRO</a>
+          {% endif %}
+    </a>
       </ul>
     </nav>
 

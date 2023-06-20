@@ -56,6 +56,12 @@ html,
 <!-- Login e cadastro-->
 
   <div class="container text-center">
+    <br>
+    {% if status == '1'%}
+    <div class="alert alert-danger" role="alert">
+      Email ou senha inválidos.
+    </div>
+    {% endif%}
     <img src="{% static 'img/logo_store.png' %}" style="max-width: 120px; height: inherit;">
 
     <!-- Pills navs -->
